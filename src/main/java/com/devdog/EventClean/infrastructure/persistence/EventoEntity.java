@@ -23,8 +23,9 @@ public class EventoEntity {
     private String identificador;
     private LocalDateTime dataInicio;
     private LocalDateTime dataFim;
-    private String local;
+    private String localEvento;
     private Integer capacidade;
     private String organizador;
+    @Enumerated(EnumType.STRING)
     private TipoEvento tipo;
 }
