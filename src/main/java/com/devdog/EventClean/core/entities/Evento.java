@@ -12,6 +12,7 @@ public record Evento(
         LocalDateTime dataInicio,
         LocalDateTime dataFim,
         String local,
+        Integer capacidade,
         String organizador,
         TipoEvento tipo
 ) {
