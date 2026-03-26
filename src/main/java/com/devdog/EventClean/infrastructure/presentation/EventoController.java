@@ -24,8 +24,8 @@ public class EventoController {
         return eventoDtoMapper.toDto(novoEvento);
     }
 
-    @GetMapping
-    public String listarEventos(){
-
-    }
+//    @GetMapping
+//    public String listarEventos(){
+//
+//    }
 }
