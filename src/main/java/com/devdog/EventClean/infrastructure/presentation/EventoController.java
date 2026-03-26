@@ -2,11 +2,9 @@ package com.devdog.EventClean.infrastructure.presentation;
 
 import com.devdog.EventClean.core.entities.Evento;
 import com.devdog.EventClean.core.usecases.CriarEventoUseCase;
+import com.devdog.EventClean.infrastructure.dtos.EventoDto;
 import com.devdog.EventClean.infrastructure.mapper.EventoDtoMapper;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/")
@@ -21,7 +19,13 @@ public class EventoController {
     }
 
     @PostMapping("criarevento")
-    public String criarEvento(@RequestBody Evento evento){
-        Evento novoEvento = criarEventoUsecase.execute(eventoDtoMapper.toDomain());
+    public EventoDto criarEvento(@RequestBody EventoDto eventoDto){
+        Evento novoEvento = criarEventoUsecase.execute(eventoDtoMapper.toDomain(eventoDto));
+        return eventoDtoMapper.toDto(novoEvento);
+    }
+
+    @GetMapping
+    public String listarEventos(){
+
     }
 }

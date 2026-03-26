@@ -2,7 +2,9 @@ package com.devdog.EventClean.infrastructure.mapper;
 
 import com.devdog.EventClean.core.entities.Evento;
 import com.devdog.EventClean.infrastructure.dtos.EventoDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EventoDtoMapper {
 
     public EventoDto toDto (Evento evento) {
