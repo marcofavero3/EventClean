@@ -1,0 +1,38 @@
+package com.devdog.EventClean.infrastructure.mapper;
+
+import com.devdog.EventClean.core.entities.Evento;
+import com.devdog.EventClean.infrastructure.dtos.EventoDto;
+
+public class EventoDtoMapper {
+
+    public EventoDto toDto (Evento evento) {
+
+        return new EventoDto(
+        evento.id(),
+        evento.nome(),
+        evento.descricao(),
+        evento.identificador(),
+        evento.dataInicio(),
+        evento.dataFim(),
+        evento.localEvento(),
+        evento.capacidade(),
+        evento.organizador(),
+        evento.tipo()
+        );
+    }
+
+    public Evento toDomain (EventoDto eventoDto) {
+        return new Evento(
+                eventoDto.id(),
+                eventoDto.nome(),
+                eventoDto.descricao(),
+                eventoDto.identificador(),
+                eventoDto.dataInicio(),
+                eventoDto.dataFim(),
+                eventoDto.localEvento(),
+                eventoDto.capacidade(),
+                eventoDto.organizador(),
+                eventoDto.tipo()
+        );
+    }
+}
