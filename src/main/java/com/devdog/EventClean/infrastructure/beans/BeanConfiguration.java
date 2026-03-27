@@ -1,6 +1,8 @@
 package com.devdog.EventClean.infrastructure.beans;
 
 import com.devdog.EventClean.core.gateway.EventoGateway;
+import com.devdog.EventClean.core.usecases.BuscaEventoUseCaseImpl;
+import com.devdog.EventClean.core.usecases.BuscarEventoUseCase;
 import com.devdog.EventClean.core.usecases.CriarEventoUseCase;
 import com.devdog.EventClean.core.usecases.CriarEventoUseCaseImpl;
 import org.springframework.context.annotation.Bean;
@@ -12,5 +14,10 @@ public class BeanConfiguration {
     @Bean
     public CriarEventoUseCase criarEvento(EventoGateway eventoGateway){
         return new CriarEventoUseCaseImpl(eventoGateway);
+    }
+
+    @Bean
+    public BuscarEventoUseCase buscarEvento(EventoGateway eventoGateway){
+        return new BuscaEventoUseCaseImpl(eventoGateway);
     }
 }
