@@ -13,7 +13,6 @@ public class BuscaEventoUseCaseImpl implements BuscarEventoUseCase{
         this.eventoGateway = eventoGateway;
     }
 
-
     @Override
     public List<Evento> execute() {
         return eventoGateway.buscarEventos();
